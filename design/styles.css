@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+:root {
+  /*ANCHOR - HLs values to edit opacity*/
+  --soft-blue-for-hlsa: 215, 51%, 70%;
+  --cyan-for-rgba: 0, 255, 247;
+  --dividing-line-for-hlsa: 215, 32%, 27%;
+  --white-for-hlsa: 0, 0%, 100%;
+
+  /*ANCHOR - Primary Colors*/
+  --soft-blue: rgb(var(--soft-blue-for-hlsa));
+  --cyan: hsl(var(--cyan-for-hlsa));
+
+  --dividing-line: hsl(var(--dividing-line-for-hlsa));
+  --white: hsl(var(--white-for-hlsa));
+  --main-bgc: hsl(217, 54%, 11%);
+  --card-bgc: hsl(216, 50%, 16%);
+
+  /*ANCHOR - Font*/
+  --default-font: "Outfit", san-serif;
+
+  /*ANCHOR - Font Sizes*/
+  --fs-7: 0.9rem;
+  --fs-6: 1rem;
+  --fs-5: 1.125rem;
+  --fs-4: 1.25rem;
+  --fs-3: 1.4rem;
+  --fs-2: 1.75rem;
+  --fs-1: 2rem;
+
+  /*ANCHOR - Font weight*/
+  --fw-regular: 300;
+  --fw-bold: 400;
+  --fw-black: 600;
+
+  /*ANCHOR - Number vars*/
+
+  /* round corner for img elements */
+  --img-border-radius: 15px;
+  --transition-time: 0.25s;
+}
+
+/*ANCHOR - Basic reeset for elements*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*SECTION - top half of the card */
+
+/*ANCHOR - background colors and setting the elements*/
+#background {
+  background-color: var(--main-bgc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  overflow: hidden;
+}
+
+#the-card {
+  margin: 0 auto;
+  background-color: var(--card-bgc);
+  max-width: 360px;
+  height: auto;
+  border-radius: 18px;
+}
+
+#content-wrapper {
+  padding: 23px 23px;
+}
+
+/*ANCHOR - nft image overlay effect*/
+#ntf-image {
+  position: relative;
+  width: 100%;
+  margin: 0 0 20px 0;
+}
+
+.cover-picture {
+  border-radius: var(--img-border-radius);
+  width: 100%;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--img-border-radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(var(--cyan-for-rgba), 0);
+  transition: opacity var(--transition-time);
+}
+
+/*FIXME - Fix transition in hover effect
+- you can just remove it, try to find workaround*/
+.image-overlay:hover {
+  background-color: rgba(var(--cyan-for-rgba), 0.5);
+}
+
+#icon-overlay {
+  width: 100%;
+  height: 100%;
+  padding: 120px;
+  opacity: 0;
+  transition: opacity var(--transition-time);
+}
+
+#icon-overlay:hover {
+  opacity: 100%;
+}
+
+/*!SECTION */
+/*SECTION -fonts */
+
+/*ANCHOR - h/p level setup setup*/
+h1,
+h2,
+h3,
+p {
+  font-family: var(--default-font);
+}
+
+h1 {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-black);
+}
+
+h2 {
+  font-size: var(--fs-6);
+  font-weight: var(--fw-regular);
+}
+
+p {
+  font-size: var(--fs-5);
+  font-weight: var(--fw-regular);
+}
+
+/*ANCHOR - main heading and text under */
+#ntf-name {
+  color: var(--white);
+  margin: 0 0 15px 0;
+  transition: color var(--transition-time);
+}
+
+#ntf-name:hover {
+  color: rgba(var(--cyan-for-rgba));
+}
+
+#description p {
+  color: hsla(var(--white-for-hlsa), 0.6);
+  margin: 0 0 20px 0;
+}
+
+/*ANCHOR - ETH and DAY counter*/
+#eth-counter {
+  font-weight: var(--fw-black);
+  color: rgb(var(--cyan-for-rgba));
+}
+
+#day-counter {
+  font-weight: var(--fw-bold);
+  color: hsl(var(--white-for-hlsa), 0.6);
+}
+
+/*ANCHOR - credit section text*/
+#credit-txt {
+  color: hsla(var(--white-for-hlsa), 0.5);
+  padding: 0 0 0 10px;
+}
+
+#creator-name {
+  color: hsla(var(--white-for-hlsa), 1);
+}
+
+#creator-name:hover {
+  color: rgba(var(--cyan-for-rgba), 1);
+  transition: color var(--transition-time);
+}
+
+/*!SECTION */
+/*SECTION - bottom half of the card */
+
+/*ANCHOR - setting space for the ETH and DAY counter*/
+.container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 0 20px 0;
+}
+
+.content-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+}
+
+.icon-space {
+  padding: 0 5px 0 0;
+  aspect-ratio: 1 1;
+}
+
+/*ANCHOR - making the divider*/
+.content-divider {
+  width: 100%;
+  border-bottom: 2px solid hsla(var(--white-for-hlsa), 0.1);
+  margin: 0 0 20px 0;
+}
+
+/*ANCHOR - credit section*/
+#credit {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 0 10px 0;
+}
+
+#avatar {
+  width: 30px;
+  height: auto;
+  border: 1px solid hsla(var(--white-for-hlsa), 1);
+  border-radius: 100%;
+}
+
+/*!SECTION */
