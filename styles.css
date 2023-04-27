@@ -66,12 +66,11 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px;
   overflow: hidden;
+  min-height: 100vh;
 }
 
 #the-card {
-  margin: 0 auto;
   background-color: var(--card-bgc);
   max-width: 360px;
   height: auto;
